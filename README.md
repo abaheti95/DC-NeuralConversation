@@ -12,6 +12,9 @@ OpenNMT based Neural Conversation model which implements Topic and Semantic Dist
 - Run the following preprocessing command for T&#124;S model - `python preprocess.py -train_src data/opensubtitles_data/s_train_dialogue_length2_6.txt -train_tgt data/opensubtitles_data/t_train_dialogue_length2_6.txt -valid_src data/opensubtitles_data/s_val_dialogue_length2_6.txt -valid_tgt data/opensubtitles_data/t_val_dialogue_length2_6.txt -save_data data/opensubtitles_2_6 -dynamic_dict -share_vocab`
 - Run the following preprocessing command for S&#124;T model - `python preprocess.py -train_src data/opensubtitles_data/t_train_dialogue_length2_6.txt -train_tgt data/opensubtitles_data/s_train_dialogue_length2_6.txt -valid_src data/opensubtitles_data/t_val_dialogue_length2_6.txt -valid_tgt data/opensubtitles_data/s_val_dialogue_length2_6.txt -save_data data/opensubtitles_2_6_s_given_t -dynamic_dict -share_vocab`
 
+### Loading pretrained model
+- Download and extract [the pretrained models](https://mega.nz/#!xU5m0AaK!x40PuAD-ipwjWBOAp61YjKjaqr5KiHk5woirkDtN1tU) and save them in the main directory. Skip the training and jump to evaluation.
+
 ### Training the model
 - Run the training command for T&#124;S model - `python train.py -data data/opensubtitles_2_6 -save_model saved_adadelta_opensubtitles_models/opensubtitles_2_6_t_given_s -gpuid 2 -encoder_type brnn -param_init 0.08 -batch_size 256 -learning_rate 0.1 -optim adadelta -max_grad_norm 1 -word_vec_size 1000 -layers 4 -rnn_size 1000 -epochs 10
 `
