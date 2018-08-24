@@ -8,7 +8,7 @@ OpenNMT based Neural Conversation model which implements Topic and Semantic Dist
 
 ## How to train and evaluate models
 ### Preprocessing the data
-- Download the train data (sources and targets) and save it in the `data/opensubtitles_data/` directory along with the validation and test files.
+- Download the [train data (sources and targets)](https://mega.nz/#!wQIlXSQL!VT4YFeQL2ODWkmCJ1itq_dpsafXUyZQECP0Q1wbtqGQ) and save it in the `data/opensubtitles_data/` directory along with the validation and test files.
 - Run the following preprocessing command for T&#124;S model - `python preprocess.py -train_src data/opensubtitles_data/s_train_dialogue_length2_6.txt -train_tgt data/opensubtitles_data/t_train_dialogue_length2_6.txt -valid_src data/opensubtitles_data/s_val_dialogue_length2_6.txt -valid_tgt data/opensubtitles_data/t_val_dialogue_length2_6.txt -save_data data/opensubtitles_2_6 -dynamic_dict -share_vocab`
 - Run the following preprocessing command for S&#124;T model - `python preprocess.py -train_src data/opensubtitles_data/t_train_dialogue_length2_6.txt -train_tgt data/opensubtitles_data/s_train_dialogue_length2_6.txt -valid_src data/opensubtitles_data/t_val_dialogue_length2_6.txt -valid_tgt data/opensubtitles_data/s_val_dialogue_length2_6.txt -save_data data/opensubtitles_2_6_s_given_t -dynamic_dict -share_vocab`
 
